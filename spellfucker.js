@@ -1,3 +1,8 @@
+// version 0.1
+
+// use: spellfucker("some text")
+// returns: {result:"sum tekst",rating:"82%"}
+
 var spellfucker = function(string){
 	var sets = {
 		strongVowels: "uoa",
@@ -259,13 +264,10 @@ var spellfucker = function(string){
 							var regexp = regexpSet[j];
 							var searchRegexp = new RegExp(regexp[0],"i");
 							var searchedPosition = word.search(searchRegexp);
-							if(regexp[3]===undefined){
-								console.error(searchRegexp)
-							}
 							if(
 								searchedPosition!==-1 // the match actually happened
 							){
-								console.log("CHECK: Word \""+word+"\" contains " + searchRegexp + " at the position of " + searchedPosition + " (actual position "+(searchedPosition+regexp[3])+")");
+								//console.log("CHECK: Word \""+word+"\" contains " + searchRegexp + " at the position of " + searchedPosition + " (actual position "+(searchedPosition+regexp[3])+")");
 								if(
 									searchedPosition>notEarlierThanPosition - regexp[3] // the position is later than the part that we have already processed
 									&& 
@@ -285,15 +287,15 @@ var spellfucker = function(string){
 						var replaceWhat = new RegExp(bestRegexp[0],"i");
 						var replacement = bestRegexp[1][Math.round(Math.random()*(bestRegexp[1].length-1))];
 						var partToChangeLength = bestRegexp[2];
-						console.log("Word \""+word+"\" contains " + replaceWhat + " at the position of " + bestPosition + " (actual position "+(bestPosition+bestRegexp[3])+") and will be replaced with \""+replacement+"\"");
+						//console.log("Word \""+word+"\" contains " + replaceWhat + " at the position of " + bestPosition + " (actual position "+(bestPosition+bestRegexp[3])+") and will be replaced with \""+replacement+"\"");
 						var lengthBefore = word.length;
 						var word = word.replace(replaceWhat,replacement);
 						var lengthAfter = word.length;
 						notEarlierThanPosition = bestPosition + (lengthAfter - lengthBefore) + (bestRegexp[2] - 1);
 						isReplaced = true;
 						atLeastSomethingObfuscated = true;
-						console.log(bestPosition + " : " + (lengthAfter - lengthBefore) + " : " + (bestRegexp[2] - 1) )
-						console.log("Position tick is now at " + notEarlierThanPosition)
+						//console.log(bestPosition + " : " + (lengthAfter - lengthBefore) + " : " + (bestRegexp[2] - 1) )
+						//console.log("Position tick is now at " + notEarlierThanPosition)
 					}
 					if(!somethingToReplaceFound){
 						nothingMoreToObfuscate = true;
@@ -315,7 +317,3 @@ var spellfucker = function(string){
 	}
 	return obfuscate(string);
 }
-
-// http://transl8it.com/ - does not eat!
-// http://obfuscator.uo1.net/ - easy to revert back
-// google can listen to the string and reproduce the original string - but this is very expensive I suspect
