@@ -3,6 +3,20 @@
 // use: spellfucker("some text")
 // returns: {result:"sum tekst",rating:"82%"}
 
+// regexpMatrix expained:
+// ["("+sets.vowels+")f",     ["$1ff","$1ph"],     2,                              1],
+//    ^                         ^                  ^                               ^
+//    pattern to replace        replacements       length of final replacement *   how much symbols are not touched at the beginning **
+// 
+// * - let say the pattern is ([eyuioayei])c([yie]) and the replacement is $1ss$2, 
+// this means that actually the part ([eyuioayei])c will be replaced to $1ss, while ([yie]) will stay untouched. 
+// As 2nd symbol is affected, we should not touch it again, while 3rd symbol can still fall into next pattern.
+// This is needed for the algorithm to not touch this part again and do not fall into infinite loop.
+// ** - let say the pattern is ([eyuioayei])c([yie]) and the replacement is $1ss$2, 
+// this means that the ([eyuioayei]) is needed only for check, but not actual replacement.
+// We will say to the algorithm: you may shift the check of the pattern to 1 to the left of the current tick position.
+// This will help the algorithm to go though every possible pattern.
+
 var spellfucker = function(string){
 	var sets = {
 		strongVowels: "uoa",
@@ -258,6 +272,7 @@ var spellfucker = function(string){
 					var bestRegexp;
 					var bestPosition = null;
 					var isReplaced = false;
+					// maybe shuffle the matrix every time?
 					for(var i = 0; i < regexpMatrix.length; i++){
 						var regexpSet = regexpMatrix[i];
 						for(var j = 0; j < regexpSet.length; j++){
