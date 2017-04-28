@@ -148,7 +148,7 @@ var spellfucker = function(string){
 			//["^e(["+sets.consonants+"])",["ea"],1]
 		],
 		[ // i
-			["^i(["+sets.consonants+"])",["ee$1"],["ea$1"],1,0],
+			["^i(["+sets.consonants+"])",["ee$1","ea$1"],1,0],
 			["(["+sets.consonants+"])i(["+sets.consonants+"])(["+sets.consonants+"])",["$1y$2$3"],2,1]
 		],
 		[ // o
