@@ -248,6 +248,8 @@ var spellfucker = function(string){
 			["(["+sets.consonants+"])ove",["$1uv"],4,1]
 		]
 	];
+	// todo: Igor to add comments on the algorithm
+	// todo: Igor to remove silly console.logs
 	var obfuscate = function(string){
 		var lines = string.split(/\n/);
 		var wordsAmount = 0;
