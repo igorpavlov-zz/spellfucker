@@ -266,13 +266,10 @@
   // todo: Igor to remove silly console.logs
   const obfuscate = function(string) {
     const lines = string.split(/\n/);
-    var wordsAmount = 0;
-    var wordsObfuscatedAmount = 0;
     const obfuscatedLines = [];
     for(var l = 0; l< lines.length; l++) {
       const line = lines[l];
       const words = line.split(/\s+/);
-      wordsAmount += words.length;
 
       const obfuscatedWords = words.map(function(word) {
         //console.log("Analysing word \"" + word + "\"");
@@ -328,18 +325,11 @@
             break;
           }
         }
-        if (atLeastSomethingObfuscated) {
-          wordsObfuscatedAmount++;
-        }
         return word;
       });
       obfuscatedLines.push(obfuscatedWords.join(" "))
     };
-    const obfuscationRate = (Math.round((wordsObfuscatedAmount / wordsAmount) * 100)) + "%";
-    return {
-      result: obfuscatedLines.join("\n"),
-      rating: obfuscationRate
-    };
+    return obfuscatedLines.join("\n");
   }
   
   return function(string) {

@@ -21,12 +21,14 @@ To make Spellfucker even more awesome, some help is needed:
 Usage
 ===========
 
-Include the library, then call:
+Get the library at **build/spellfucker** and include it into Browser or NodeJS application.
 
-```spellfucker("your string of text")```
+Call:
 
-Get a simple object:
+```const result = spellfucker("your string of text");```
 
-```{result:"jor stryngue hoph thexd",rating:"100%"}```
+Get a result:
 
-Enjoy!
+```console.log(result); // returns something like "jor stryngue hoph thexd"```
+
+NPM package is coming... Enjoy!
