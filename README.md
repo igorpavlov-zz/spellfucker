@@ -10,7 +10,7 @@ Text obfuscation is not about changing "a" to "à" as it becomes revertable easi
 Usage
 ===========
 
-Get the library at **build/spellfucker** and include it into Browser or NodeJS application.
+Get the library at **build/spellfucker** and include it into browser or NodeJS application.
 
 Call:
 
