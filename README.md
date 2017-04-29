@@ -7,7 +7,7 @@ Why?
 
 Text obfuscation is not about changing "a" to "à" as it becomes reversible easily. Spellfucker's method uses random replacements of unpredictable letter combinations which makes the reverting process more difficult. The cool thing is that the text still stays readable.
 
-Note: The project is in development. Not all letter combinations have multiple replacements yet or some replacements have only one original letter combination. Some of results can still be reversed.
+Note: Not all letter combinations have multiple replacements yet or some replacements have only one original letter combination. Some of results can still be easily reversed. The library of replacements is in active development. Stay tuned.
 
 Usage
 ===========
