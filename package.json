@@ -1,0 +1,30 @@
+{
+  "name": "spellfucker",
+  "version": "0.1.0",
+  "description": "Yet another text obfuscator and the biggest enemy of the spellchecker",
+  "main": "build/spellfucker.js",
+  "scripts": {
+    "test": "echo \"Sorry, no tests yet.\" && exit 1",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorpavlov/spellfucker.git"
+  },
+  "keywords": [
+    "spellfucker",
+    "obfuscate",
+    "obfuscator"
+  ],
+  "author": "Igor Pavlov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igorpavlov/spellfucker/issues"
+  },
+  "homepage": "https://github.com/igorpavlov/spellfucker#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minify": "0.0.15",
+    "gulp-uglify": "^2.1.2"
+  }
+}
