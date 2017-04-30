@@ -1,25 +1,20 @@
-Spellfucker 
-============
-Yet another text obfuscator and the biggest enemy of the spellchecker
-
-Why?
-=========
-
-Text obfuscation is not about changing "a" to "à" as it becomes reversible easily. Spellfucker's method uses random replacements of unpredictable letter combinations which makes the reverting process more difficult. The cool thing is that the text still stays readable.
-
-Note: Not all letter combinations have multiple replacements yet or some replacements have only one original letter combination. Some of results can still be easily reversed. The library of replacements is in active development. Stay tuned.
-
-Usage
+Installation
 ===========
 
-Get the library at **build/spellfucker** and include it into browser or NodeJS application.
+```npm install spellfucker --save```
 
-Call:
+- For NodeJS: ```const spellfucker = require('spellfucker');```
+- For browser: ```<script src='node_modules/spellfucker/build/spellfucker.js' type='text/javascript'></script>```
 
-```const result = spellfucker("your string of text");```
+Usage
+=========
 
-Get a result:
+```const result = spellfucker('your string of text'); // returns something like "jor stryngue hoph thexd"```
 
-```console.log(result); // returns something like "jor stryngue hoph thexd"```
+Enjoy!
 
-NPM package is coming... Enjoy!
+Development
+===========
+
+```git clone https://github.com/igorpavlov/spellfucker```
+```git clone https://github.com/igorpavlov/spellfucker```
