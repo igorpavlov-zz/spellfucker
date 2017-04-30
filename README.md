@@ -3,18 +3,32 @@ Installation
 
 ```npm install spellfucker --save```
 
-- For NodeJS: ```const spellfucker = require('spellfucker');```
-- For browser: ```<script src='node_modules/spellfucker/build/spellfucker.js' type='text/javascript'></script>```
-
 Usage
 =========
 
-```const result = spellfucker('your string of text'); // returns something like "jor stryngue hoph thexd"```
-
-Enjoy!
+```
+const result = spellfucker('your string of text'); 
+// returns something like "jor stryngue hoph thexd"
+```
 
 Development
 ===========
 
-```git clone https://github.com/igorpavlov/spellfucker```
-```git clone https://github.com/igorpavlov/spellfucker```
+```
+git clone https://github.com/igorpavlov/spellfucker```
+cd spellfucker
+npm run build
+```
+
+Source files are in **src** folder. Build files are in **build** folder.
+
+To test the library:
+
+```
+node -e 'console.log(require("./build/spellfucker.js")("to test some text"))'
+```
+
+Learn more
+===========
+
+https://spellfucker.com/
