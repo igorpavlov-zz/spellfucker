@@ -1,7 +1,9 @@
 Install
 ===========
 
-```npm install spellfucker --save```
+```
+npm install spellfucker --save
+```
 
 Include
 =========
