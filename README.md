@@ -38,10 +38,12 @@ git clone https://github.com/igorpavlov/spellfucker
 cd spellfucker
 ```
 
-Source files are in **src** folder. Build files are in **build** folder. To test the library:
+Source files are in **src** folder. Please leave the **build** folder untouched to avoid merge conflicts.
 
 ```
-npm run build
+// run a quick test
+npm run quicktest
+// or run a custom test
 node -e 'console.log(require("./build/spellfucker.js")("to test some text"))'
 ```
 
