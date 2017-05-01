@@ -43,7 +43,7 @@ Source files are in **src** folder. Please leave the **build** folder untouched 
 # run a quick test
 npm run quicktest
 # or run a custom test
-node -e 'console.log(require("./build/spellfucker.js")("to test some text"))'
+node -e 'console.log(require("./src/spellfucker.js")("to test some text"))'
 ```
 
 Learn more
