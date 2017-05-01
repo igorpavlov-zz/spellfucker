@@ -1,12 +1,12 @@
 Install
-===========
+=======
 
 ```sh
 npm install spellfucker --save
 ```
 
 Include
-=========
+=======
 
 **NodeJS** 
 
@@ -23,7 +23,7 @@ const spellfucker = require('spellfucker');
 
 
 Use
-=====
+===
 
 ```js
 const result = spellfucker('your string of text'); 
@@ -31,7 +31,25 @@ const result = spellfucker('your string of text');
 ```
 
 Develop
-===========
+=======
+
+```sh
+git clone https://github.com/igorpavlov/spellfucker
+cd spellfucker
+```
+
+Source files are in **src** folder. Please leave the **build** folder untouched to avoid merge conflicts.
+
+
+```sh
+# run a quick test
+npm run quicktest
+# or run a custom test
+node -e 'console.log(require("./build/spellfucker.js")("to test some text"))'
+```
+
+Develop
+=======
 
 ```sh
 git clone https://github.com/igorpavlov/spellfucker

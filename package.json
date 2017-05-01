@@ -5,6 +5,7 @@
   "main": "build/spellfucker.js",
   "scripts": {
     "test": "echo \"Sorry, no tests yet.\" && exit 1",
+    "build": "gulp",
     "quicktest": "node -e 'console.log(require(\"./tests/quicktest.js\")())'"
   },
   "repository": {
