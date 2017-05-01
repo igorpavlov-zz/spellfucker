@@ -286,7 +286,6 @@
                 }
 
               }
-              /**/
             }
           }
           if (bestPosition !== null) {
