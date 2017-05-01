@@ -21,7 +21,6 @@ const spellfucker = require('spellfucker');
 ```
 ...or use ES6 *import*
 
-
 Use
 ===
 
@@ -30,8 +29,8 @@ const result = spellfucker('your string of text');
 // returns something like "jor stryngue hoph thexd"
 ```
 
-Develop
-=======
+Contribute
+==========
 
 ```sh
 git clone https://github.com/igorpavlov/spellfucker
@@ -39,25 +38,6 @@ cd spellfucker
 ```
 
 Source files are in **src** folder. Please leave the **build** folder untouched to avoid merge conflicts.
-
-
-```sh
-# run a quick test
-npm run quicktest
-# or run a custom test
-node -e 'console.log(require("./build/spellfucker.js")("to test some text"))'
-```
-
-Develop
-=======
-
-```sh
-git clone https://github.com/igorpavlov/spellfucker
-cd spellfucker
-```
-
-Source files are in **src** folder. Please leave the **build** folder untouched to avoid merge conflicts.
-
 
 ```sh
 # run a quick test
