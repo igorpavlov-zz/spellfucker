@@ -41,11 +41,9 @@
   const regexpMatrix = [
     [ // b
       ["bb", ["b"], 2, 0],
-      //["(["+sets.v+"])b(["+sets.v+"])",["$1bb$2"],2]
     ],
     [ // d
       ["dd", ["d"], 2, 0],
-      //["(["+sets.v+"])d(["+sets.v+"])",["$1dd$2"],2]
     ],
     [ // f
       ["ff", ["f", "ph"], 2, 0],
@@ -57,7 +55,6 @@
       ["gh", ["g", "gg", "gue"], 2, 0],
       ["gue", ["g", "gh"], 3, 0],
       ["gg", ["g", "gh", "gue"], 2, 0],
-      //["(["+sets.v+"])g(["+sets.v+"])",["$1gg$2"],2],
       ["g$", ["gh", "gue"], 1, 0]
     ],
     [ // h
@@ -73,11 +70,9 @@
     ],
     [ // l
       ["ll", ["l"], 2, 0],
-      //["(["+sets.v+"])l(["+sets.v+"])",["$1ll$2"],2]
     ],
     [ // m
       ["mm", ["m"], 2, 0],
-      //["(["+sets.v+"])m(["+sets.v+"])",["$1mm$2"],2],
       ["m$", ["mb", "mn", "lm"], 1, 0]
     ],
     [ // n
@@ -85,7 +80,6 @@
       ["^n", ["kn", "gn"], 1, 0],
       ["kn", ["n", "gn"], 2, 0],
       ["gn", ["n", "kn"], 2, 0],
-      //["(["+sets.v+"])n(["+sets.v+"])",["$1nn$2"],2]
     ],
     [ // ng
       ["ng$", ["ngue"], 2, 0],
@@ -93,18 +87,14 @@
     ],
     [ // p
       ["pp", ["p"], 2, 0],
-      //["(["+sets.v+"])p(["+sets.v+"])",["$1pp$2"],2]
     ],
     [ // r
       ["rr", ["r"], 2, 0],
-      //["(["+sets.v+"])r(["+sets.v+"])",["$1rr$2"],2],
       ["^r", ["wr", "rh"], 1, 0]
     ],
     [ // s
       ["^s([" + sets.sv + "])", ["c$1", "sc$1"], 1, 0],
       ["([" + sets.c + "])s([" + sets.sv + "])", ["$1c$2", "$1sc$2", "$1ps$2"], 2, 1],
-      //["([^^])s(["+sets.hv+"])",["$1ss$2"],2],
-      //["(["+sets.v+"])s$",["$1ss"],2],
       ["s$", ["ce", "se", "z"], 1, 0],
       ["([" + sets.sv + "])ss([" + sets.sv + "])", ["$1sc$2"], 3, 1],
       ["ss$", ["s"], 2, 0],
@@ -159,7 +149,6 @@
       ["^a([" + sets.c + "])([" + sets.c + "])", ["e$1$2"], 1, 0]
     ],
     [ // e
-      //["^e(["+sets.c+"])",["ea"],1]
     ],
     [ // i
       ["^i([" + sets.c + "])", ["ee$1", "ea$1"], 1, 0],
@@ -202,10 +191,8 @@
     [ // ü | oo
       ["ew$", ["oe"], 2, 0],
       ["oo", ["ou"], 2, 0],
-      //["ou",["oo"],2]
     ],
     [ // /yü/ 
-      //["u(["+sets.c+"])",["joo$1","yoo$1"],1],
       ["iew$", ["ju", "ew"], 3, 0],
       ["ew$", ["ju", "iew"], 2, 0],
       ["you", ["ew", "jew"], 3, 0]
@@ -232,7 +219,7 @@
       ["eir", ["are", "ear", "ere", "air"], 3, 0]
     ],
     [ // ä
-      ["ar$", ["ah"], 2, 0], // for British only? :)
+      ["ar$", ["ah"], 2, 0],
     ],
     [ // û
       ["([" + sets.c + "])ir([" + sets.c + "])$", ["ur", "er"], 3, 1],
@@ -244,13 +231,13 @@
     [ // ēә - we already have it?
     ],
     [ // üә
-      ["ure$", ["iour$"], 3, 0] // ??? is it good?
+      ["ure$", ["iour$"], 3, 0]
     ],
     [ // c/k
-      ["c([" + sets.hv + "])", ["k$1", "ck$1"], 1, 0] // ??? is it good?
+      ["c([" + sets.hv + "])", ["k$1", "ck$1"], 1, 0]
     ],
     [ // x
-      ["([" + sets.v + "])x([" + sets.v + "])", ["$1kz$2", "$1gz$2"], 2, 1] // ??? is it good?
+      ["([" + sets.v + "])x([" + sets.v + "])", ["$1kz$2", "$1gz$2"], 2, 1]
     ],
     [ // q/u
       ["qu", ["koo", "ku", "cu"], 2, 0]
@@ -262,8 +249,7 @@
       ["([" + sets.c + "])ove", ["$1uv"], 4, 1]
     ]
   ];
-  // todo: Igor to add comments on the algorithm
-  // todo: Igor to remove silly console.logs
+  
   const obfuscate = function(string) {
     const lines = string.split(/\n/);
     const obfuscatedLines = [];
@@ -272,7 +258,6 @@
       const words = line.split(/\s+/);
 
       const obfuscatedWords = words.map(function(word) {
-        //console.log("Analysing word \"" + word + "\"");
         var notEarlierThanPosition = -1;
         var nothingMoreToObfuscate = false;
         var atLeastSomethingObfuscated = false;
@@ -291,7 +276,6 @@
               if (
                 searchedPosition !== -1 // the match actually happened
               ) {
-                //console.log("CHECK: Word \""+word+"\" contains " + searchRegexp + " at the position of " + searchedPosition + " (actual position "+(searchedPosition+regexp[3])+")");
                 if (
                   searchedPosition > notEarlierThanPosition - regexp[3] // the position is later than the part that we have already processed
                   &&
@@ -310,15 +294,12 @@
             const replaceWhat = new RegExp(bestRegexp[0], "i");
             const replacement = bestRegexp[1][Math.round(Math.random() * (bestRegexp[1].length - 1))];
             const partToChangeLength = bestRegexp[2];
-            //console.log("Word \""+word+"\" contains " + replaceWhat + " at the position of " + bestPosition + " (actual position "+(bestPosition+bestRegexp[3])+") and will be replaced with \""+replacement+"\"");
             const lengthBefore = word.length;
             word = word.replace(replaceWhat, replacement);
             const lengthAfter = word.length;
             notEarlierThanPosition = bestPosition + (lengthAfter - lengthBefore) + (bestRegexp[2] - 1);
             isReplaced = true;
             atLeastSomethingObfuscated = true;
-            //console.log(bestPosition + " : " + (lengthAfter - lengthBefore) + " : " + (bestRegexp[2] - 1) )
-            //console.log("Position tick is now at " + notEarlierThanPosition)
           }
           if (!somethingToReplaceFound) {
             nothingMoreToObfuscate = true;
