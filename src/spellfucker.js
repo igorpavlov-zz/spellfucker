@@ -250,6 +250,17 @@
     ]
   ];
   
+  const shuffle_array = function(array) {
+    var tmp, current, top = array.length;
+    if(top) while(--top) {
+      current = Math.floor(Math.random() * (top + 1));
+      tmp = array[current];
+      array[current] = array[top];
+      array[top] = tmp;
+    }
+    return array;
+  }
+  
   const obfuscate = function(string) {
     const lines = string.split(/\n/);
     const obfuscatedLines = [];
@@ -266,9 +277,9 @@
           var bestRegexp;
           var bestPosition = null;
           var isReplaced = false;
-          // maybe shuffle the matrix every time?
-          for (var i = 0; i < regexpMatrix.length; i++) {
-            const regexpSet = regexpMatrix[i];
+          const regexpMatrixShuffled = shuffle_array(regexpMatrix);
+          for (var i = 0; i < regexpMatrixShuffled.length; i++) {
+            const regexpSet = shuffle_array(regexpMatrix[i]);
             for (var j = 0; j < regexpSet.length; j++) {
               const regexp = regexpSet[j];
               const searchRegexp = new RegExp(regexp[0], "i");
@@ -284,7 +295,6 @@
                   bestPosition = searchedPosition;
                   bestRegexp = regexp;
                 }
-
               }
             }
           }
