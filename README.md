@@ -33,7 +33,7 @@ const result = spellfucker('your string of text');
 Develop
 ===========
 
-```
+```js
 git clone https://github.com/igorpavlov/spellfucker
 cd spellfucker
 ```
