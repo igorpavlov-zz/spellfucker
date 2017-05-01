@@ -16,7 +16,7 @@ const spellfucker = require('spellfucker');
 
 **Browser**
 
-```js
+```html
 <script src='node_modules/spellfucker/build/spellfucker.js' type='text/javascript'></script>
 ```
 ...or use ES6 *import*
