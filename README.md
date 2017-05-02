@@ -32,7 +32,7 @@ const result = spellfucker('your string of text');
 Contribute
 ==========
 
-Fork the project. The most challenging part is the replacement library. I suggest to nail the original English version first. The perfect replacement matrix should look like this:
+Fork the project. The most challenging part is the replacement library. I suggest to nail the original English version first. The perfect shape of the replacement matrix should look like this:
 
 ```
 ---------------
