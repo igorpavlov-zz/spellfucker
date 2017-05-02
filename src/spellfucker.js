@@ -229,7 +229,9 @@
     [ // ēә - we already have it?
     ],
     [ // üә
-      ["ure$", ["iour$"], 3, 0],
+      ["ure$", ["iour","ior","or"], 3, 0],
+      ["iour$", ["ure","ior","or"], 4, 0],
+      ["ior$", ["ure","iour","or"], 3, 0],
     ],
     [ // c/k
       ["c([" + sets.hv + "])", ["k$1", "ck$1"], 1, 0],
