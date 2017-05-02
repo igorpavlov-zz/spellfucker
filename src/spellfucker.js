@@ -6,11 +6,6 @@
  
 /*!
  *
- * version 0.1
- *
- * use: spellfucker("some text")
- * returns: {result:"sum tekst",rating:"82%"}
- *
  * regexpMatrix expained:
  * ["("+sets.v+")f",     ["$1ff","$1ph"],     2,                              1],
  *    ^                         ^                  ^                               ^
