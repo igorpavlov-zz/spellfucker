@@ -128,11 +128,10 @@
       ["sion", ["zhn", "zhion"], 4, 0],
       ["(.)zure", ["$1zhure", "$1sure"], 5, 1],
     ],
-    [ // ch - BUG
-      ["ch", ["tch"], 2, 0],
-      ["tch", ["ch"], 3, 0],
-      ["(.)ture", ["$1tchure", "$1tshure", "$1chur"], 5, 1],
-      ["(.)tion", ["$1tchion", "$1tshion", "$1chn"], 5, 1],
+    [ // ch
+      ["ch", ["tch","tsh"], 2, 0],
+      ["tch", ["ch","tsh"], 3, 0],
+      ["(.)ture", ["$1chure", "$1chr", "$1chur","$1tshur","$1tshure"], 5, 1],
     ],
     [ // sh
       ["(.)tion", ["$1shion", "$1shen", "$1shn"], 5, 1],
