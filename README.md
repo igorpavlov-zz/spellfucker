@@ -32,10 +32,17 @@ const result = spellfucker('your string of text');
 Contribute
 ==========
 
-```sh
-git clone https://github.com/igorpavlov/spellfucker
-cd spellfucker
+Fork the project. The most challenging part is the replacement library. I suggest to nail the original English version first. The perfect replacement matrix should look like this:
+
 ```
+---------------
+|"ck","k","kh"|
+|"k","ck","kh"|
+|"kh","ck","k"|
+---------------
+```
+
+The size of the sample matrix above is N=3. The bigger N is, the better. You get the point.
 
 Source files are in **src** folder. Please leave the **build** folder untouched to avoid merge conflicts.
 
@@ -45,6 +52,8 @@ npm run quicktest
 # or run a custom test
 node -e 'console.log(require("./src/spellfucker.js")("to test some text"))'
 ```
+
+The contributors will be listed on this page soon.
 
 Learn more
 ===========
