@@ -53,7 +53,8 @@ npm run quicktest
 node -e 'console.log(require("./src/spellfucker.js")("to test some text"))'
 ```
 
-The contributors will be listed on this page soon.
+- [@dawsbot](https://github.com/dawsbot) - Improved Readme
+- [@DennyDai](https://github.com/DennyDai) - The very first contributor, fixed a nasty bug in the library
 
 Learn more
 ===========
