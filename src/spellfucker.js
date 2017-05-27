@@ -209,15 +209,15 @@
       ["our([" + sets.c + "])", ["ohr$1", "or$1"], 2, 0],
     ],
     [ // ã
-      ["air", ["are", "ear", "ere", "eir"], 3, 0],
-      ["are", ["air", "ear", "ere", "eir"], 3, 0],
-      ["ear", ["are", "air", "ere", "eir"], 3, 0],
-      ["ere", ["are", "ear", "air", "eir"], 3, 0],
-      ["eir", ["are", "ear", "ere", "air"], 3, 0],
+      ["([" + sets.c + "])air", ["$1are", "$1ear", "$1ere", "$1eir"], 4, 1],
+      ["([" + sets.c + "])are", ["$1air", "$1ear", "$1ere", "$1eir"], 4, 1],
+      ["([" + sets.c + "])ear", ["$1are", "$1air", "$1ere", "$1eir"], 4, 1],
+      ["([" + sets.c + "])ere", ["$1are", "$1ear", "$1air", "$1eir"], 4, 1],
+      ["([" + sets.c + "])eir", ["$1are", "$1ear", "$1ere", "$1air"], 4, 1],
     ],
     [ // ä
       ["ar", ["ahr"], 2, 0],
-      ["ah([" + sets.c + "])", ["ahr"], 2, 0],
+      ["ah([" + sets.c + "])", ["ahr$1"], 2, 0],
     ],
     [ // û
       ["([" + sets.c + "])ir([" + sets.c + "])$", ["ur", "er"], 3, 1],
