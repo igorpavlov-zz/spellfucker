@@ -51,6 +51,8 @@ Source files are in **src** folder. Please leave the **build** folder untouched 
 npm run quicktest
 # or run a custom test
 node -e 'console.log(require("./src/spellfucker.js")("to test some text"))'
+# or run a custom test with debugging
+node -e 'console.log(require("./src/spellfucker.js")("division",{debug:3}))'
 ```
 
 **Contributors**

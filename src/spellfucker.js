@@ -267,7 +267,8 @@
     return array;
   }
   
-  const obfuscate = function(string) {
+  const obfuscate = function(string,options) {
+    options = options || {};
     const lines = string.split(/\n/);
     const obfuscatedLines = [];
     for(var l = 0; l< lines.length; l++) {
@@ -310,6 +311,9 @@
             const replacement = bestRegexp[1][Math.round(Math.random() * (bestRegexp[1].length - 1))];
             const partToChangeLength = bestRegexp[2];
             const lengthBefore = word.length;
+            if(options.debug===3){
+              console.log(replaceWhat + " TO " + replacement);
+            }
             word = word.replace(replaceWhat, replacement);
             const lengthAfter = word.length;
             notEarlierThanPosition = bestPosition + (lengthAfter - lengthBefore) + (bestRegexp[2] - 1);
@@ -328,8 +332,8 @@
     return obfuscatedLines.join("\n");
   }
   
-  return function(string) {
-    return obfuscate(string);
+  return function(string,options) {
+    return obfuscate(string,options);
   };
   
 });
