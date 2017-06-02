@@ -1,6 +1,6 @@
 {
   "name": "spellfucker",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Yet another text obfuscator and the biggest enemy of the spellchecker",
   "main": "build/spellfucker.js",
   "scripts": {
